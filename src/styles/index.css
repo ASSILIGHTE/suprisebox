@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #fff5f7;
+    touch-action: manipulation;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-panel-dark {
+  background: rgba(255, 240, 245, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 209, 220, 0.5);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 220, 230, 0.5);
+  box-shadow: 0 10px 30px -5px rgba(233, 69, 114, 0.08);
+}
+
+/* Paper Texture Effect */
+.paper-texture {
+  background-color: #fffdfa;
+  background-image: radial-gradient(#e5d5c5 0.75px, transparent 0.75px), radial-gradient(#e5d5c5 0.75px, #fffdfa 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fff5f7;
+}
+::-webkit-scrollbar-thumb {
+  background: #f8a5ba;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f37194;
+}
+
+/* Custom Animations */
+@keyframes heartPulse {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.15); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.15); }
+  70% { transform: scale(1); }
+}
+
+.animate-heart-beat {
+  animation: heartPulse 1.8s infinite ease-in-out;
+}
+
+@keyframes lidLift {
+  0% {
+    transform: translateY(0) rotateX(0deg);
+  }
+  30% {
+    transform: translateY(-20px) rotateX(-15deg);
+  }
+  100% {
+    transform: translateY(-120px) rotateX(-45deg) rotateY(15deg);
+    opacity: 0.2;
+  }
+}
+
+.animate-lid-lift {
+  animation: lidLift 1.5s ease-out forwards;
+}
+
+/* Polaroids subtle rotation helpers */
+.polaroid-1 { transform: rotate(-2.5deg); }
+.polaroid-2 { transform: rotate(1.8deg); }
+.polaroid-3 { transform: rotate(-1.2deg); }
+.polaroid-4 { transform: rotate(2.4deg); }
